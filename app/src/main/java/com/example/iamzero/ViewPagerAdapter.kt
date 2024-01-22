@@ -11,12 +11,11 @@ class ViewPagerAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragme
 
         return when(position){
             0 -> { CalendarFragment() }
-            1 -> { DiaryPostFragment() }
-            2 -> { DiaryFragment() }
+            1 -> { DiaryFragment() }
             else -> throw Exception()
         }
     }
     companion object {
-        private const val PAGES_NUM = 3
+        private const val PAGES_NUM = 2
     }
 }

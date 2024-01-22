@@ -9,9 +9,7 @@ class DiaryPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment){
     override fun createFragment(position: Int): Fragment {
 
         return when(position){
-            0 -> { CalendarFragment() }
-            1 -> { DiaryPostFragment() }
-            2 -> { DiaryFragment() }
+
             else -> throw Exception()
         }
     }

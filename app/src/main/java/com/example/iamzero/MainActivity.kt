@@ -22,6 +22,13 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        binding.viewpagerContainer.registerOnPageChangeCallback(object: androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.practiceBottomNavi.menu.getItem(position).isChecked = true
+            }
+        })
     }
 
 }
