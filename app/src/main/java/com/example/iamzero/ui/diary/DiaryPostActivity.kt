@@ -1,4 +1,4 @@
-package com.example.iamzero
+package com.example.iamzero.ui.diary
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

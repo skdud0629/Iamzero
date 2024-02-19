@@ -1,7 +1,8 @@
-package com.example.iamzero
+package com.example.iamzero.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.iamzero.R
 import com.example.iamzero.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

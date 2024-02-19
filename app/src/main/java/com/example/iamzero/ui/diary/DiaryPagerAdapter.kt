@@ -1,6 +1,5 @@
-package com.example.iamzero
+package com.example.iamzero.ui.diary
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
