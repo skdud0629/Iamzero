@@ -1,10 +1,16 @@
 package com.example.iamzero.data
 
-class MemoRepositoryImpl(
+import android.content.Context
+import java.util.Date
+
+
+class MemoRepositoryImpl(context: Context) : MemoRepository {
     private val database: MemoDatabase
-) : MemoRepository {
-    override suspend fun getMemo(id: Long): Memo {
-        return database.memoDao().getMemo(id)
+    init {
+        database = MemoDatabase.getInstance(context)!!
+    }
+    override suspend fun getMemo(date: Date): Memo {
+        return database.memoDao().getMemo(date)
     }
     override suspend fun insertMemo(memo: Memo) {
         return database.memoDao().insertMemo(memo)
