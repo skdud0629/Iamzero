@@ -5,13 +5,14 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import java.util.Date
 
 @Dao
 interface MemoDao {
     @Query("Select * from Memo")
     fun getAllMemo(): Memo
-    @Query("SELECT * FROM Memo WHERE id = :memoId")
-    fun getMemo(memoId: Long): Memo
+    @Query("SELECT * FROM Memo WHERE date = :date")
+    fun getMemo(date: Date): Memo
     @Delete
     fun deleteMemo(memo: Memo)
     @Insert(onConflict = OnConflictStrategy.REPLACE) //동일한 PrimaryKey 가 있을 경우 덮어쓰기
