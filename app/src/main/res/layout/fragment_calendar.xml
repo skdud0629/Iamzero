@@ -43,12 +43,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/calendarView"  />
 
             <Button
-                android:id="@+id/modify_btn"
+                android:id="@+id/write_btn"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFC6C6"
                 android:textColor="@color/black"
-
                 android:textSize="50px"
                 android:text="@string/modify"
                 app:layout_constraintBottom_toBottomOf="parent"
