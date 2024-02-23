@@ -11,8 +11,8 @@ import java.util.Date
 interface MemoDao {
     @Query("Select * from Memo")
     fun getAllMemo(): Memo
-    @Query("SELECT * FROM Memo WHERE date = :date")
-    fun getMemo(date: Date): Memo
+    @Query("SELECT * FROM Memo WHERE id = :id")
+    fun getMemo(id: Long): Memo
     @Delete
     fun deleteMemo(memo: Memo)
     @Insert(onConflict = OnConflictStrategy.REPLACE) //동일한 PrimaryKey 가 있을 경우 덮어쓰기

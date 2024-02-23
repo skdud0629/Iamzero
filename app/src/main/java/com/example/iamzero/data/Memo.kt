@@ -5,9 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Memo(
-    @PrimaryKey val id: Int?,
+    @PrimaryKey val id: Int,
     val content: String,
     val date: String
-) {
-    constructor() : this(null, "제목", "")
-}
+)
