@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [Memo::class],
-    version = 1,
+    version = 3,
     exportSchema = false
 )
 abstract class MemoDatabase : RoomDatabase() {
@@ -25,6 +27,7 @@ abstract class MemoDatabase : RoomDatabase() {
                         MemoDatabase::class.java,
                         "memo-database"
                     )
+                        .fallbackToDestructiveMigration()
                         .build()
                 }
             }
