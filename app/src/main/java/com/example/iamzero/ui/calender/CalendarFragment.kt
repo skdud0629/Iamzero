@@ -53,20 +53,24 @@ class CalendarFragment : Fragment() {
         }
 
         binding.writeBtn.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext())
+            val et: EditText = EditText(requireContext())
+            et.setText(viewModel.memoContent.value)
+
+            builder.setTitle("$date")
+                .setView(et)
+                .setPositiveButton("수정") { dialog, _ ->
+                    viewModel.memoContent.value = et.text.toString()
+                    dialog.dismiss()
+                }
+                .setNegativeButton("취소") { dialog, _ ->
+                    viewModel.memoContent.value = et.text.toString()
+                    dialog.dismiss()
+                }
+            builder.show()
             buttonState(true)
         }
 
-        binding.checkBtn.setOnClickListener {
-            buttonState(false)
-            viewModel.memoContent.value= binding.memoEt.text.toString()
-            viewModel.writeMemo(Memo(memoId.toLong(),viewModel.memoContent.value))
-            binding.memoTv.visibility = View.VISIBLE
-            binding.memoEt.visibility=View.GONE
-        }
-
-        binding.cancelBtn.setOnClickListener {
-            buttonState(false)
-        }
 
         viewModel.memoContent.observe(viewLifecycleOwner) { content ->
             binding.memoTv.text = content
@@ -75,20 +79,15 @@ class CalendarFragment : Fragment() {
 
         return binding.root
     }
-
-    private fun buttonState(isEditing: Boolean){
-        if(isEditing){
+    private fun buttonState(isEditing: Boolean) {
+        if (isEditing) {
             binding.memoTv.visibility = View.GONE
             binding.writeBtn.visibility = View.GONE
             binding.memoEt.visibility = View.VISIBLE
-            binding.cancelBtn.visibility = View.VISIBLE
-            binding.checkBtn.visibility = View.VISIBLE
         } else {
             binding.memoTv.visibility = View.VISIBLE
             binding.writeBtn.visibility = View.VISIBLE
             binding.memoEt.visibility = View.GONE
-            binding.cancelBtn.visibility = View.GONE
-            binding.checkBtn.visibility = View.GONE
         }
     }
 
