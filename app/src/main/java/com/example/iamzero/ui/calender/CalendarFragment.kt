@@ -3,11 +3,13 @@ package com.example.iamzero.ui.calender
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.iamzero.ViewModelFactory
@@ -60,7 +62,8 @@ class CalendarFragment : Fragment() {
             builder.setTitle("$date")
                 .setView(et)
                 .setPositiveButton("수정") { dialog, _ ->
-                    viewModel.memoContent.value = et.text.toString()
+                    binding.memoTv.text=et.text
+                    viewModel.writeMemo(Memo(memoId.toLong(), et.text.toString()))
                     dialog.dismiss()
                 }
                 .setNegativeButton("취소") { dialog, _ ->
