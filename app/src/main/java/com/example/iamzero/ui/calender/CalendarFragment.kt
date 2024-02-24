@@ -1,17 +1,20 @@
 package com.example.iamzero.ui.calender
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.iamzero.ViewModelFactory
 import com.example.iamzero.data.Memo
 import com.example.iamzero.data.MemoRepositoryImpl
 import com.example.iamzero.databinding.FragmentCalendarBinding
+import com.google.android.material.internal.ViewUtils.showKeyboard
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -28,18 +31,24 @@ class CalendarFragment : Fragment() {
     }
 
     private val binding get() = _binding
-    @SuppressLint("SimpleDateFormat")
+
+    @SuppressLint("SimpleDateFormat", "RestrictedApi")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCalendarBinding.inflate(inflater, container, false)
         val calendar = Calendar.getInstance()
-        var memoId = "${calendar.get(Calendar.YEAR)}${calendar.get(Calendar.MONTH) + 1}${calendar.get(Calendar.DAY_OF_MONTH)}"
+        var memoId = "${calendar.get(Calendar.YEAR)}${calendar.get(Calendar.MONTH) + 1}${
+            calendar.get(Calendar.DAY_OF_MONTH)
+        }"
+        val dataFormat = SimpleDateFormat("yyyy년 MM월 dd일")
+        val date: Date = Date(binding.calendarView.date)
 
+        viewModel.date = dataFormat.format(date)
         viewModel.getMemo(memoId.toLong())
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            memoId="$year${month+1}$dayOfMonth"
+            memoId = "$year${month + 1}$dayOfMonth"
             viewModel.getMemo(memoId.toLong())
         }
 
