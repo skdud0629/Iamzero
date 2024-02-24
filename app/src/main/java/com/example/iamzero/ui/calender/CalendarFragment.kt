@@ -68,27 +68,14 @@ class CalendarFragment : Fragment() {
                     dialog.dismiss()
                 }
             builder.show()
-            buttonState(true)
-        }
 
+        }
 
         viewModel.memoContent.observe(viewLifecycleOwner) { content ->
             binding.memoTv.text = content
-            binding.memoEt.setText(content)
         }
 
         return binding.root
-    }
-    private fun buttonState(isEditing: Boolean) {
-        if (isEditing) {
-            binding.memoTv.visibility = View.GONE
-            binding.writeBtn.visibility = View.GONE
-            binding.memoEt.visibility = View.VISIBLE
-        } else {
-            binding.memoTv.visibility = View.VISIBLE
-            binding.writeBtn.visibility = View.VISIBLE
-            binding.memoEt.visibility = View.GONE
-        }
     }
 
 
