@@ -18,7 +18,7 @@ class CalendarViewModel(private val memoRepository: MemoRepositoryImpl) : ViewMo
 
     private val _memoContent: MutableLiveData<String?> = MutableLiveData()
     val memoContent: MutableLiveData<String?> get() = _memoContent
-    val date = ""
+    var date = ""
     fun getMemo(id: Long) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
