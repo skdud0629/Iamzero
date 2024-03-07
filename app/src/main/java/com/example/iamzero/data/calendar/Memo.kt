@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Memo(
-    @PrimaryKey val id: Long,
+    @PrimaryKey
+    val id: Long,
     val content: String?
 )
