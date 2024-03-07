@@ -16,5 +16,5 @@ interface PostDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun editPost(post: Post)
     @Delete
-    fun deleteMemo(memo: Post)
+    fun deletePost(memo: Post)
 }
