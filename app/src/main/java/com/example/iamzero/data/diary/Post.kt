@@ -1,4 +1,4 @@
-package com.example.iamzero.data
+package com.example.iamzero.data.diary
 
 data class Post(
     val id:String,

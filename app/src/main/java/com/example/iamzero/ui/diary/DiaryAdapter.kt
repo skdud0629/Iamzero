@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.iamzero.R
-import com.example.iamzero.data.Post
+import com.example.iamzero.data.diary.Post
 import com.example.iamzero.databinding.ItemPostBinding
 
 class DiaryAdapter(

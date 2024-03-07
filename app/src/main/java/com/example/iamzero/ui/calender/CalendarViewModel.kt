@@ -1,18 +1,13 @@
 package com.example.iamzero.ui.calender
 
-import android.app.Application
-import android.content.Context
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.iamzero.data.Memo
-import com.example.iamzero.data.MemoRepository
-import com.example.iamzero.data.MemoRepositoryImpl
+import com.example.iamzero.data.calendar.Memo
+import com.example.iamzero.data.calendar.MemoRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.Date
 
 class CalendarViewModel(private val memoRepository: MemoRepositoryImpl) : ViewModel() {
 

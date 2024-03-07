@@ -2,7 +2,7 @@ package com.example.iamzero
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.iamzero.data.MemoRepositoryImpl
+import com.example.iamzero.data.calendar.MemoRepositoryImpl
 import com.example.iamzero.ui.calender.CalendarViewModel
 
 

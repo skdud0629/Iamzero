@@ -1,9 +1,7 @@
-package com.example.iamzero.data
-
-import java.util.Date
+package com.example.iamzero.data.calendar
 
 interface MemoRepository {
-    suspend fun getMemo(id: Long) :Memo
+    suspend fun getMemo(id: Long) : Memo
     suspend fun insertMemo(memo: Memo)
     suspend fun deleteMemo(memo: Memo)
 

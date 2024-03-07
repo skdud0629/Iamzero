@@ -1,7 +1,7 @@
 package com.example.iamzero
 
 import android.app.Application
-import com.example.iamzero.data.MemoRepositoryImpl
+import com.example.iamzero.data.calendar.MemoRepositoryImpl
 
 class CalendarApplication : Application() {
     //private val applicationScope = CoroutineScope(SupervisorJob())

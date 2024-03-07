@@ -1,4 +1,4 @@
-package com.example.iamzero.data
+package com.example.iamzero.data.calendar
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
