@@ -9,12 +9,12 @@ import androidx.room.Query
 
 @Dao
 interface PostDao {
-    @Query("Select * from Post")
-    fun getAllMemo(): Post
+    @Query("SELECT * FROM Post WHERE id = :id")
+    fun getPost(id: Long): Post
     @Insert
-    fun insertMemo(memo: Post)
-    @Query("SELECT * FROM Memo WHERE id = :id")
-    fun getMemo(id: Long): Post
+    fun insertPost(post: Post)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun editPost(post: Post)
     @Delete
     fun deleteMemo(memo: Post)
 }
