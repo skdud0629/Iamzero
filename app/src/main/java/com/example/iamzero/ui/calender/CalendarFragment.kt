@@ -25,7 +25,6 @@ class CalendarFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         repository = MemoRepositoryImpl(requireContext())
-        viewModel = ViewModelFactory(repository).create(CalendarViewModel::class.java)
     }
 
     private val binding get() = _binding
@@ -35,6 +34,7 @@ class CalendarFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = ViewModelFactory(repository).create(CalendarViewModel::class.java)
         _binding = FragmentCalendarBinding.inflate(inflater, container, false)
         val calendar = Calendar.getInstance()
         var memoId = "${calendar.get(Calendar.YEAR)}${calendar.get(Calendar.MONTH) + 1}${
