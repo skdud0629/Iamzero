@@ -8,7 +8,7 @@ import com.example.iamzero.ui.calender.CalendarViewModel
 import com.example.iamzero.ui.diary.DiaryViewModel
 
 
-class ViewModelFactory(private val repository: MemoRepositoryImpl) : ViewModelProvider.Factory {
+class MemoViewModelFactory(private val repository: MemoRepositoryImpl) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CalendarViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")

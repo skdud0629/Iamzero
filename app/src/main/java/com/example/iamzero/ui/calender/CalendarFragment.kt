@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
-import com.example.iamzero.ViewModelFactory
+import com.example.iamzero.MemoViewModelFactory
 import com.example.iamzero.data.calendar.Memo
 import com.example.iamzero.data.calendar.MemoRepositoryImpl
 import com.example.iamzero.databinding.FragmentCalendarBinding
@@ -34,7 +34,7 @@ class CalendarFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelFactory(repository).create(CalendarViewModel::class.java)
+        viewModel = MemoViewModelFactory(repository).create(CalendarViewModel::class.java)
         _binding = FragmentCalendarBinding.inflate(inflater, container, false)
         val calendar = Calendar.getInstance()
         var memoId = "${calendar.get(Calendar.YEAR)}${calendar.get(Calendar.MONTH) + 1}${
