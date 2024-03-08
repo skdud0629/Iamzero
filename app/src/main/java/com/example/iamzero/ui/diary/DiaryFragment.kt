@@ -49,7 +49,6 @@ class DiaryFragment : Fragment() {
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { it ->
                 if (it.resultCode == Activity.RESULT_OK && it.data != null) { //갤러리 캡쳐 결과값  && it.data?.data != null
                     val clipData = it?.data?.clipData
-                    val clipDataSize = clipData?.itemCount
                     var selectedImageUri: Uri
                     val currentList : MutableList<Uri> = mutableListOf()
                     if (clipData == null) { //이미지를 하나만 선택할 경우 clipData가 null이 올수 있음
