@@ -1,5 +1,6 @@
 package com.example.iamzero.ui.diary
 
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,6 +13,8 @@ class DiaryViewModel( private val diaryRepository: DiaryRepositoryImpl) : ViewMo
 
     private var _diaryContent :MutableLiveData<Post> = MutableLiveData()
     val diaryContent: MutableLiveData<Post> get() = _diaryContent
+    private var _imageList :MutableLiveData<List<Uri>> = MutableLiveData()
+    val imageList: MutableLiveData<List<Uri>> get() = _imageList
     fun getDiary(id: Long){
         viewModelScope.launch(Dispatchers.IO){
             diaryRepository.getPost(id).let{
