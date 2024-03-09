@@ -9,6 +9,8 @@ import androidx.room.Query
 
 @Dao
 interface PostDao {
+    @Query("SELECT * FROM Post")
+    fun getAllPost(): List<Post>
     @Query("SELECT * FROM Post WHERE id = :id")
     fun getPost(id: Long): Post
     @Insert

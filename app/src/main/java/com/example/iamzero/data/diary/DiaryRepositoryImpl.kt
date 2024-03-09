@@ -10,6 +10,10 @@ class DiaryRepositoryImpl(context: Context) : DiaryRepository {
         database = DiaryDatabase.getInstance(context)!!
     }
 
+    override suspend fun getAllPost(): List<Post> {
+        return database.postDao().getAllPost()
+    }
+
     override suspend fun getPost(id: Long): Post {
         return database.postDao().getPost(id)
     }

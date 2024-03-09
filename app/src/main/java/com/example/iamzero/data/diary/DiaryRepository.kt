@@ -1,6 +1,7 @@
 package com.example.iamzero.data.diary
 
 interface DiaryRepository {
+    suspend fun getAllPost(): List<Post>
     suspend fun getPost(id: Long): Post
     suspend fun insertPost(post: Post)
     suspend fun editPost(post: Post)
