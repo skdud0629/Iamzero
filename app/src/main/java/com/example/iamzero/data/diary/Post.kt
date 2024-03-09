@@ -8,6 +8,6 @@ data class Post(
     @PrimaryKey
     val id: String,
     val date: String,
-    val img: String,
+    val img: List<String>,
     val content: String
 )
