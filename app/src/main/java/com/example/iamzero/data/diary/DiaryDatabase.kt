@@ -4,12 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.iamzero.Converters
 
 @Database(
     entities = [Post::class],
     version = 1,
     exportSchema = false
 )
+@TypeConverters(Converters::class)
 abstract class DiaryDatabase : RoomDatabase() {
     abstract fun postDao(): PostDao
 
