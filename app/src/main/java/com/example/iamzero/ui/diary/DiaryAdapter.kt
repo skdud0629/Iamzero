@@ -19,9 +19,8 @@ class DiaryAdapter(
         fun bind(item: Post) {
 
             Glide.with(binding.root.context)
-                .load(item.img)
-                .error(R.drawable.sharp_android_24)
-                .circleCrop()
+                .load(item.img?.get(0))
+                .error(R.drawable.ic_error)
                 .into(binding.postIv)
 
 
