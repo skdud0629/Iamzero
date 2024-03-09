@@ -8,7 +8,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.iamzero.R
-class PostImagePagerAdapter(var postContents: List<Uri>, val context: Context) :
+class PostImagePagerAdapter(var postContents: List<String>, val context: Context) :
     RecyclerView.Adapter<PostImagePagerAdapter.PagerViewHolder>() {
     inner class PagerViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
         (LayoutInflater.from(parent.context).inflate(R.layout.item_post_content, parent, false)) {
@@ -22,7 +22,7 @@ class PostImagePagerAdapter(var postContents: List<Uri>, val context: Context) :
     override fun onBindViewHolder(holder: PagerViewHolder, position: Int) {
         //holder.postContent.setImageResource()
         val item= postContents[position]
-        Glide.with(context).load(item)
+        Glide.with(context).load(Uri.parse(item))
             .override(500,1280)
             .into(holder.postContent)
     }
