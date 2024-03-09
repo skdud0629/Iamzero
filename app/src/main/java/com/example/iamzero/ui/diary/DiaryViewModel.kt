@@ -14,6 +14,9 @@ class DiaryViewModel( private val diaryRepository: DiaryRepositoryImpl) : ViewMo
     val diaryContent: MutableLiveData<Post> get() = _diaryContent
     private var _imageList :MutableLiveData<List<String>> = MutableLiveData()
     val imageList: MutableLiveData<List<String>> get() = _imageList
+    private var _postList :MutableLiveData<List<Post>> = MutableLiveData()
+    val postList: MutableLiveData<List<Post>> get() = _postList
+    
     fun getDiary(id: Long){
         viewModelScope.launch(Dispatchers.IO){
             diaryRepository.getPost(id).let{
