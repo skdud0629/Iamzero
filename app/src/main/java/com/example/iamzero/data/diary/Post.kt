@@ -10,6 +10,6 @@ data class Post(
     @PrimaryKey
     val id: Long,
     val date: String,
-    val img: ArrayList<String>?,
+    val img: List<String>?,
     val content: String
 )
