@@ -9,7 +9,7 @@ import com.example.iamzero.Converters
 
 @Database(
     entities = [Post::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
