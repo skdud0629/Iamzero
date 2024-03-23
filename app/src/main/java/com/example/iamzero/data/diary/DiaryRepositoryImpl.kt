@@ -1,6 +1,7 @@
 package com.example.iamzero.data.diary
 
 import android.content.Context
+import kotlinx.coroutines.flow.Flow
 
 
 class DiaryRepositoryImpl(context: Context) : DiaryRepository {
@@ -14,7 +15,7 @@ class DiaryRepositoryImpl(context: Context) : DiaryRepository {
         return database.postDao().getAllPost()
     }
 
-    override suspend fun getPost(id: Long): Post {
+    override suspend fun getPost(id: Long): Flow<Post> {
         return database.postDao().getPost(id)
     }
 

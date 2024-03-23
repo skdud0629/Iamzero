@@ -26,7 +26,7 @@ class DiaryViewModel( private val diaryRepository: DiaryRepositoryImpl) : ViewMo
     }
     fun getDiary(id: Long){
         viewModelScope.launch(Dispatchers.IO){
-            diaryRepository.getPost(id).let{
+            diaryRepository.getPost(id).collect {
                 _diaryContent.postValue(it)
             }
         }
