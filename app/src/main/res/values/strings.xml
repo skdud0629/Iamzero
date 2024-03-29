@@ -11,4 +11,5 @@
     <string name="check">확인</string>
     <string name="write">입력</string>
     <string name="upload">업로드</string>
+    <string name="delete">삭제</string>
 </resources>
